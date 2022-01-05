@@ -17,7 +17,16 @@
 
         <hr/>
 
+        <p>Dados: Nome:{{form.nome.value}} / Email:{{form.email.value}} / Telefone:{{form.telefone.value}} / Nome da empresa:{{form.nome_empresa.value}}</p>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Registrar</button>
+
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{form.non_field_errors}}
+        </div>
+        {% endif %}
 
     </form>
 {% endblock %}
